@@ -1,12 +1,6 @@
 .wrapper {
     display: grid;
     place-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the text */
-    color: rgb(0, 0, 0); /* Adjust text color for visibility */
-    font-size: 2rem; /* Adjust font size as needed */
   }
   
   .typing-demo {
