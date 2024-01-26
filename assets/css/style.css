@@ -1,0 +1,74 @@
+html {
+  font-family: Inter, sans-serif; /* Replace with your font */
+}
+
+/* Navigation bar */
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  margin-top: 2vw;
+}
+
+/* Main */
+#main-nav{
+  margin-left: 2%;
+}
+
+#main-nav img{
+  margin-right: 2vw;
+}
+
+#main-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+#main-nav li {
+  float: left;
+  text-decoration: none;
+}
+
+#main-nav li a {
+  display: block;
+  font-size: 1vw; /* Corrected from "size" */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 0.7vw 0.7vw;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Change the link color to #111 (black) on hover */
+#main-nav li a:hover {
+  color: #ffffff !important;
+  background: #3f3e3e;
+  border-color: #ffffff !important;
+  transition: all 0.4s ease 0s;
+}
+
+/* Sub */
+#sub-nav li a {
+  float: right;
+  display: block;
+  color: #2D2F30;
+  font-size: 0.85vw;
+  text-align: center;
+  padding: 0.7vw 0.7vw;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+#sub-nav{
+  float: right;
+  margin-right: 0.5vw;
+}
+
+
