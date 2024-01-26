@@ -12,6 +12,8 @@ ul{
 
 nav{
   margin-top: 2vw;
+  margin-bottom: 2vw ;;
+  display: flex;
 }
 
 /* Main */
@@ -71,4 +73,7 @@ nav{
   margin-right: 0.5vw;
 }
 
-
+/* Banner */
+#banner{
+  margin-top: 1vw;
+}
