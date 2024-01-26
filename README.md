@@ -1,7 +1,8 @@
-# Planning
+# Plan
 
-nav: jobs.html, apply.html, about.html -
-index 
+nav: 
+jobs.html, apply.html, about.html 
+- index 
 	- 
 	- banner
 		- container: List job()
