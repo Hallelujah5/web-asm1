@@ -2,6 +2,10 @@ html {
   font-family: Inter, sans-serif; /* Replace with your font */
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Navigation bar */
 
 ul {
@@ -19,6 +23,12 @@ nav {
 /* Main */
 #main-nav {
   margin-left: 2%;
+}
+
+#main-nav img{
+  width: 20%; 
+  height: 5%; 
+  float: left
 }
 
 #main-nav img {
@@ -107,8 +117,23 @@ nav {
 }
 
 /* sections */
+#categories{
+  margin: 2vw;
+}
+
 #main-header{
   float: left;
   font-size: 1.5vw; 
-  margin: 2vw;
+  
+}
+
+#categories div a{
+  color: #2d2f30;
+  font-size: 1.0vw;
+  margin-right: 5vw;
+  float: right;
+}
+
+.box {
+  height: 10vw;
 }
