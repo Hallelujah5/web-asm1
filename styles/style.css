@@ -105,7 +105,6 @@ body {background-color: #fcfbeb;}
   align-items: center;
   color: rgb(70, 68, 68);
   font-size: 1em;
-
 }
 
 .button:hover {
@@ -134,7 +133,6 @@ body {background-color: #fcfbeb;}
   left: 50%;
   transform: translate(-50%, -50%); /* centering text */
   color: rgb(0, 0, 0); /*visibility*/
-  font-size: 2rem; /* Adjusting font size  */
 }
 
 /* sections */
@@ -174,6 +172,13 @@ body {background-color: #fcfbeb;}
     margin-top: 5%;
   }
   .svg{
+    display: none;
+  }
+
+  #slogan{
+    font-size: 1.5em;
+  }
+  nav{
     display: none;
   }
 }
