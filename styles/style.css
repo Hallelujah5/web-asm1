@@ -104,7 +104,8 @@ body {background-color: #fcfbeb;}
   justify-content: center;
   align-items: center;
   color: rgb(70, 68, 68);
-  font-size: 2vw;
+  font-size: 1em;
+
 }
 
 .button:hover {
