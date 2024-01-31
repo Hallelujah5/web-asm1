@@ -6,7 +6,7 @@
     <meta name="description" content="Job Application form">
     <meta name="keywords" content="Job Apply">
     <meta name="author" content="Halellujah">
-    <link rel="stylesheet" href="application.css"> 
+    <link rel="stylesheet" href="styles/application.css"> 
     <title>Job Application</title>
 </head>
 <body>
@@ -15,19 +15,19 @@
         
             <p>
                 <label for="Name"><b>Given Name</b></label>
-                <input type="text" name="Name" id="Name" maxlength="15" size="0" required pattern="[A-Za-z ]+" placeholder="Enter first name..." ><span class="required">*</span>
+                <input type="text" name="Name" id="Name" maxlength="15" size="20" required pattern="[A-Za-z ]+" placeholder="Enter first name..." ><span class="required">*</span>
       <br><br>
                 <label for="Family"><b>Family Name</b></label>
                 <input type="text" name="Family" id="Family" maxlength="15" size="19" required pattern="[A-Za-z]+" placeholder="Enter family name..."><span class="required">*</span>
               </p>
         <p>
           <label for="birthdate"><b>Date of Birth</b></label>
-          <input type="date" name="birthdate" id="birthdate" placeholder="dd/mm/yyyy"  ><span class="required">*</span>
+          <input type="date" name="birthdate" id="birthdate"   ><span class="required">*</span>
         </p>
 
 
-        <label for="Reference Num"><b>Job Reference No.</b></label>
-        <input type="text" name="Reference Num" id="Reference Num" maxlength="7" size="35" required="required" pattern="[0-9]+"><span class="required">*</span>
+        <label for="ReferenceNum"><b>Job Reference No.</b></label>
+        <input type="text" name="ReferenceNum" id="ReferenceNum" maxlength="7" size="35" required="required" pattern="[0-9]+"><span class="required">*</span>
 
 <fieldset>
     <legend>Gender<span class="required">*</span></legend>
@@ -99,7 +99,7 @@
     </p>
 </fieldset>
         <label for="other">Please list your other skills below:</label><br>
-        <textarea name="other" rows="7" cols="40" placeholder="Write your other skills here..."></textarea><br>
+        <textarea name="other" id="other" rows="7" cols="40" placeholder="Write your other skills here..."></textarea><br>
         <input type="submit" value="Apply">
         </form>
     </fieldset>  

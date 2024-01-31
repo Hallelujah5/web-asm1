@@ -1,0 +1,31 @@
+
+
+
+
+
+/* Coppied from w3school 8 */
+
+/* For mobile phones: */
+[class*="col"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {     /*Col stands for collumns, and the 's" just means "small", which is meant for small screens such as ipads or iphones*/ 
+    /* For tablets: */
+    .s-col2 {width: 16.66%;}
+    .s-col5 {width: 41.66%;}
+    .s-col7 {width: 58.33%;}
+    .s-col9 {width: 75%;}
+    .s-col10 {width: 83.33%;}
+    .s-col12 {width: 100%;}
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col2 {width: 16.66%;}
+    .col5 {width: 41.66%;}
+    .col7 {width: 58.33%;}
+    .col9 {width: 75%;}
+    .col10 {width: 83.33%;}
+    .col12 {width: 100%;}      /*Full width*/
+  }
