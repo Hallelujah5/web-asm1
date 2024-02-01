@@ -18,7 +18,7 @@
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: larger;
+    font-size: calc(20px + 2vw);
   }
   
   @keyframes typing {           /*animation*/
