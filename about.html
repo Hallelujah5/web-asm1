@@ -9,58 +9,82 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
     <link rel="stylesheet" href="styles/not_my_style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <main>
-    <nav>
-      <div class="col12 s-col12 col" style="display: block">
-        <div id="main-nav" class="col7 s-col7 col">
-          <a href="#"><img src="images/logo.png" alt="job-hunting-icon" /></a>
-          <ul>
-            <li>
-              <a href="index.html"><span>Home</span></a>
-            </li>
-            <li>
-              <a href="jobs.html"><span>Potential jobs</span></a>
-            </li>
-            <li>
-              <a href="index.html"><span>Companies</span></a>
-            </li>
-            <li>
-              <a href="#"><span>Login</span></a>
-            </li>
-          </ul>
+      <nav id="nav-for-desktop">
+        <!-- Main navigation bar -->
+        <div class="col12 s-col12 col" style="display: block">
+          <div id="main-nav" class="col7 s-col7 col">
+            <a href="index.html"
+              ><img src="images/logo.png" alt="job-hunting-icon"
+            /></a>
+            <ul>
+              <li>
+                <a href="index.html"><span>Home</span></a>
+              </li>
+              <li>
+                <a href="jobs.html"><span>Potential jobs</span></a>
+              </li>
+              <li>
+                <a href="about.html"><span>Companies</span></a>
+              </li>
+              <li>
+                <a href="#"><span>Login</span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- Sub navigation bar  -->
+          <div id="sub-nav" class="col5 s-col5 col">
+            <ul>
+              <li>
+                <a
+                  href="https://www.cnbctv18.com/tags/it-jobs.htm"
+                  target="_blank"
+                  >News</a
+                >
+              </li>
+              <li>
+                <a href="apply.html" target="_blank">Apply your cv</a>
+              </li>
+              <li><a href="about.html">About us</a></li>
+            </ul>
+          </div>
         </div>
+      </nav>
+      <!-- Nav for smaller screen size -->
+      <nav id="nav-for-tablet">
+        <a href="index.html"><img src="./images/logo.png" alt="logo" /></a>
+        <div class="dropdown">
+          <div>Menu</div>
+          <div class="dropdown-content">
+            <a href="index.html">Home</a> <br />
+            <a href="jobs.html">Potential Jobs</a><br />
+            <a href="about.html">Companies</a><br />
+            <a href="#">Login</a><br />
+          </div>
+        </div>
+      </nav>
 
-        <div id="sub-nav" class="col5 s-col5 col">
-          <ul>
-            <li><a href="https://www.cnbctv18.com/tags/it-jobs.htm">News</a></li>
-            <li>
-              <a href="apply.html" target="_blank"
-                >Apply your cv</a
-              >
-            </li>
-            <li><a href="about.html" class="">About us</a></li>
-          </ul>
+      <!-- Banner -->
+      <div id="banner" class="col12 s-col12 col">
+        <img src="images/banner.jpg" alt="banner" class="col12 s-col12 col" />
+
+        <div class="wrapper" id="slogan">
+          <div class="typing-demo">Find your true self.</div>
+          <a href="apply.html" class="button" id="apply" target="_blank"
+            >Apply now</a
+          >
         </div>
       </div>
-    </nav>
 
-    <!-- Banner -->
-    <div id="banner" class="col12 s-col12 col">
-      <img src="images/banner.jpg" alt="banner" class="col12 s-col12 col" />
+      <!-- Recycling starter codes from index.html for consistency  -->
+      <!-- starting from here is about.html -->
 
-      <div class="wrapper" id="slogan">
-        <div class="typing-demo">Find your true self.</div>
-        <a href="apply.html" class="button" id="APPLY" target="_blank">Apply now</a>
-      </div>
-    </div>
-
-    <!-- Recycling starter codes from index.html for consistency  -->
-    <!-- starting from here is about.html -->
-
-  
       <section class="container">
         <!-- Contains the whole About part-->
         <h2 class="ABOUT-TITLE">ABOUT</h2>
@@ -99,37 +123,34 @@
               unparalleled value and service.
             </p>
           </div>
-          <div class="About-Statistics">      <!--Second part: Statistics -->
-              <p  class="text-stat">Total Users</p>
-              <h3>
-                <span class="number-stat">71,500</span><span class="grayish">+ users</span>
-              </h3>
-            
+          <div class="About-Statistics">
+            <!--Second part: Statistics -->
+            <p class="text-stat">Total Users</p>
+            <h3>
+              <span class="number-stat">71,500</span
+              ><span class="grayish">+ users</span>
+            </h3>
 
-            
-              <p class="text-stat">Website Total Clicks</p>
-              <h3>
-                <span  class="number-stat">13,700,000</span><span class="grayish">+ clicks</span>
-              </h3>
-            
+            <p class="text-stat">Website Total Clicks</p>
+            <h3>
+              <span class="number-stat">13,700,000</span
+              ><span class="grayish">+ clicks</span>
+            </h3>
 
-            
-              <p class="text-stat">Website Total On-time</p>
-              <h3>
-                <span  class="number-stat">135,000</span><span class="grayish">+ hours</span>
-              </h3>
-            
+            <p class="text-stat">Website Total On-time</p>
+            <h3>
+              <span class="number-stat">135,000</span
+              ><span class="grayish">+ hours</span>
+            </h3>
 
-            
-              <p class="text-stat"> Total Jobs hired </p>
-              <h3>
-                <span  class="number-stat">17,900</span><span class="grayish">+ Jobs hired</span>
-              </h3>
-            
+            <p class="text-stat">Total Jobs hired</p>
+            <h3>
+              <span class="number-stat">17,900</span
+              ><span class="grayish">+ Jobs hired</span>
+            </h3>
           </div>
         </div>
       </section>
-      
     </main>
 
     <footer class="footer">
@@ -156,7 +177,7 @@
             <h4 id="member">Memberships</h4>
             <ul>
               <li><a href="#">free trial</a></li>
-              <li><a href="#">basic  option</a></li>
+              <li><a href="#">basic option</a></li>
               <li><a href="#">long-term plan</a></li>
               <li><a href="#">premium access</a></li>
             </ul>
@@ -173,7 +194,5 @@
         </div>
       </div>
     </footer>
-    
   </body>
 </html>
-

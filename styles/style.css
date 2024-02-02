@@ -22,10 +22,42 @@ ul {
   padding: 0;
 }
 
-nav {
+#nav-for-desktop {
   margin-top: 2vw;
   margin-bottom: 2vw;
   display: flex;
+}
+#nav-for-tablet{
+  display: none;
+}
+#nav-for-tablet img{
+  width: calc(150px + 2vw);
+  margin: 2em;
+}
+.dropdown{
+  float: right;
+  margin-right: 22vw;
+  margin-top: 2em;
+}
+
+/* W3school Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Main */
@@ -95,7 +127,6 @@ body {
   border: 0.5vh solid #494949 !important;
   display: inline-block;
   width: 60%;
-  height: 75%;
   margin: 2vw;
   font-size: 2vw;
   font-family: monospace;
@@ -166,6 +197,9 @@ body {
   margin-left: 5%;
 }
 @media only screen and (max-width: 600px) {
+  #nav-for-tablet{
+    display: block; 
+  }
   #grid_view button {
     margin: 0;
   }
@@ -176,7 +210,14 @@ body {
     display: none;
   }
 
-  nav {
+  #banner img{
+    display: none;
+  }
+  #banner {
+    height: 50vw;
+  }
+
+  #nav-for-desktop {
     display: none;
   }
 
@@ -347,7 +388,13 @@ ul {
 @media (max-width: 767px) {
   .footer-co {
     width: 50%;
-    margin-bottom: 30px;
+    margin-bottom: 30px
+    ;
+  }
+  .button{
+    margin: 0;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
   }
 }
 @media (max-width: 574px) {
@@ -361,11 +408,11 @@ ul {
 #search-bar {
   /* Basic styling */
   margin-top: 2vw;
-  width: 20vw; /* Adjust width as needed */
+  
   padding: 0.5vw 1.2vw; /* Add padding for visual appeal */
   border: 0.1vw solid #ccc; /* Define a border */
   border-radius: 0.1vw; /* Round the corners */
-  font-size: 1.5vw; /* Set a comfortable font size */
+  font-size: calc(15px + 1.5vw); /* Set a comfortable font size */
   box-sizing: border-box; /* Ensure consistent sizing */
   background-color: transparent;
   /* Refine appearance on focus */

@@ -15,7 +15,7 @@
 
 <body>
 
-  <nav>
+  <nav id="nav-for-desktop">
     <!-- Main navigation bar -->
     <div class="col12 s-col12 col" style="display: block">
       <div id="main-nav" class="col7 s-col7 col">
@@ -39,13 +39,30 @@
       <div id="sub-nav" class="col5 s-col5 col">
         <ul>
           <li>
-            <a href="https://www.cnbctv18.com/tags/it-jobs.htm" target="_blank">News</a>
+            <a
+              href="https://www.cnbctv18.com/tags/it-jobs.htm"
+              target="_blank"
+              >News</a
+            >
           </li>
           <li>
             <a href="apply.html" target="_blank">Apply your cv</a>
           </li>
           <li><a href="about.html">About us</a></li>
         </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Nav for smaller screen size -->
+  <nav id="nav-for-tablet">
+    <a href="index.html"><img src="./images/logo.png" alt="logo" ></a>
+    <div class="dropdown">
+      <div>Menu</div>
+      <div class="dropdown-content">
+      <a href="index.html">Home</a> <br>
+      <a href="jobs.html">Potential Jobs</a><br>
+      <a href="about.html">Companies</a><br>
+      <a href="#">Login</a><br>
       </div>
     </div>
   </nav>
@@ -58,15 +75,37 @@
     <div class="wrapper">
       <div class="typing-demo">Looking for jobs ?
       </div> 
-      <form action="/processName">
+      <form action="/processName" method="get">
         <input type="text" placeholder="Find job by name" id="search-bar" required pattern="^[a-zA-z]+$">
       </form> 
     </div>
   </div>
 <main>
-  <section class="col12 s-col12 col">
-    <div class="headers"> <h1>Best job right now  </h1> <em> >> RECOMMENDED BY JOB HUNTER</em> </div>
     
+    <section class="col12 s-col12 col" id="categories">
+      <div class="col12 s-col12 col">
+        <h1 id="main-header" class="typing-demo col2 s-col2 col">
+          Potential jobs
+        </h1>
+      </div>
+      <div class="col12 s-col12 col cate" id="grid_view">
+        <div class="button hover col5 job-category" style="text-align: center;">
+          <h3>Economic Analyst</h3>
+          <img  src="./images/svg/economic-investment-svgrepo-com.svg" alt="" class="svg" style="width: calc(100px + 5em); margin-top: 20px;">
+          <h3>Job description</h3>
+          <p>Economic analysts research, collect, and analyze data to assess economic trends and develop forecasts. They use their findings to advise businesses, organizations, and government agencies on economic issues.</p>
+        </div>
+        <div class="button hover col5 job-category" style="text-align: center;">
+          <h3>Software engineer</h3>
+          <img  src="./images/svg/computer-code-solid-svgrepo-com.svg" alt="" class="svg" style="width: calc(100px + 5em); margin-top: 20px;">
+          <h3>Job description</h3>
+          <p>Software engineers are the masterminds behind the digital tools and applications that shape our lives. They combine creativity, technical expertise, and problem-solving skills to design, develop, and maintain software systems.</p>
+        </div> 
+        
+
+      </div>
+    </section>
+
   </section>
   <footer class="footer">
     <div class="footer-container">
