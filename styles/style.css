@@ -27,14 +27,14 @@ ul {
   margin-bottom: 2vw;
   display: flex;
 }
-#nav-for-tablet{
+#nav-for-tablet {
   display: none;
 }
-#nav-for-tablet img{
+#nav-for-tablet img {
   width: calc(150px + 2vw);
   margin: 2em;
 }
-.dropdown{
+.dropdown {
   float: right;
   margin-right: 22vw;
   margin-top: 2em;
@@ -51,7 +51,7 @@ ul {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
 }
@@ -171,7 +171,7 @@ body {
 
 #main-header {
   float: left;
-  font-size: calc(5px + 1.2em) ;
+  font-size: calc(5px + 1.2em);
   margin: 2vw;
 }
 
@@ -196,36 +196,6 @@ body {
   height: 10vw;
   margin-left: 5%;
 }
-@media only screen and (max-width: 600px) {
-  #nav-for-tablet{
-    display: block; 
-  }
-  #grid_view button {
-    margin: 0;
-  }
-  .box {
-    margin-top: 5%;
-  }
-  .svg {
-    display: none;
-  }
-
-  #banner img{
-    display: none;
-  }
-  #banner {
-    height: 50vw;
-  }
-
-  #nav-for-desktop {
-    display: none;
-  }
-
-  #categories div a{
-    float: left;
-    margin: 2vw;
-  }
-}
 
 /* About Us */
 
@@ -242,18 +212,7 @@ body {
 .About-title {
   width: 50%;
 }
-@media only screen and (max-width: 743px) {
-  /*   Responsive design */
-  .container-about {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-  .About-title {
-    width: 100%;
-  }
-}
+
 .container-about {
   display: flex;
   justify-content: space-between;
@@ -384,31 +343,12 @@ ul {
   background-color: #ffffff;
 }
 
-/*responsive*/
-@media (max-width: 767px) {
-  .footer-co {
-    width: 50%;
-    margin-bottom: 30px
-    ;
-  }
-  .button{
-    margin: 0;
-    margin-top: 3vw;
-    margin-bottom: 3vw;
-  }
-}
-@media (max-width: 574px) {
-  .footer-co {
-    width: 100%;
-  }
-}
-
 /* POTENTIAL JOBS */
 /* Target the input element specifically */
 #search-bar {
   /* Basic styling */
   margin-top: 2vw;
-  
+
   padding: 0.5vw 1.2vw; /* Add padding for visual appeal */
   border: 0.1vw solid #ccc; /* Define a border */
   border-radius: 0.1vw; /* Round the corners */
@@ -431,4 +371,71 @@ ul {
 }
 .headers em {
   font-size: 0.8vw;
+}
+
+/* Media only part */
+
+@media (max-width: 574px) {
+  .footer-co {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #nav-for-tablet {
+    display: block;
+  }
+  #grid_view button {
+    margin: 0;
+  }
+  .box {
+    margin-top: 5%;
+  }
+  .svg {
+    display: none;
+  }
+
+  #banner img {
+    display: none;
+  }
+  #banner {
+    height: 50vw;
+  }
+
+  #nav-for-desktop {
+    display: none;
+  }
+
+  #categories div a {
+    float: left;
+    margin: 2vw;
+  }
+
+
+  @media only screen and (max-width: 743px) {
+    /*   Responsive design */
+    .container-about {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .About-title {
+      width: 100%;
+    }
+  }
+
+  /*responsive*/
+  @media (max-width: 767px) {
+    .footer-co {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    .button {
+      margin: 0;
+      margin-top: 3vw;
+      margin-bottom: 3vw;
+    }
+  }
+
 }
