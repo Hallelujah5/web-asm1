@@ -27,6 +27,7 @@ ul {
   margin-bottom: 2vw;
   display: flex;
 }
+
 #nav-for-tablet {
   display: none;
 }
@@ -83,7 +84,7 @@ body {
 #main-nav li a {
   /*Designing the navigation bar*/
   display: block;
-  font-size: 1vw;
+  font-size: calc(1vw + 0.4em);
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 0.7vw 0.7vw;
@@ -373,7 +374,43 @@ ul {
   font-size: 0.8vw;
 }
 
-/* Media only part */
+#categories div h1 {
+  font-size: calc(1vw + 1em);
+}
+
+#grid_view div {
+  margin-left: 4.165%;
+}
+
+.job-category strong {
+  font-size: calc(1vw + 1em);
+}
+.job-category img {
+  width: calc(10vw + 5em);
+  margin-top: 20px;
+}
+
+#job-details h1{
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#job-details .job-detail {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
+#job-details .job-detail ul li {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+
+/* Media only begin from this part */
 
 @media (max-width: 574px) {
   .footer-co {
@@ -385,9 +422,14 @@ ul {
   #nav-for-tablet {
     display: block;
   }
-  #grid_view button {
-    margin: 0;
+  .button {
+    font-size: calc(2vw + 1em);
   }
+  #grid_view .button {
+    margin: 0;
+    margin-top: 1vw;
+  }
+
   .box {
     margin-top: 5%;
   }
@@ -411,9 +453,7 @@ ul {
     margin: 2vw;
   }
 
-
   @media only screen and (max-width: 743px) {
-    /*   Responsive design */
     .container-about {
       flex-direction: column;
       text-align: center;
@@ -425,7 +465,6 @@ ul {
     }
   }
 
-  /*responsive*/
   @media (max-width: 767px) {
     .footer-co {
       width: 50%;
@@ -437,5 +476,4 @@ ul {
       margin-bottom: 3vw;
     }
   }
-
 }
