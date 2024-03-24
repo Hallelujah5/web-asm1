@@ -1,0 +1,183 @@
+/* 
+filename: about.css
+author: Minh Viet, Hallelujah
+created: 1/25/2024
+last modified: 2/23/2024
+description: css file for about.html
+ */
+
+/* ------------------FAQs------------------ */
+
+.container-faqs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .question {
+    font-style: italic;
+    font-weight: 650;
+    margin: 0.9em 0;
+    font-size: 1.2em;
+  }
+  .answer::before {
+    content: "-";
+  }
+  .question::before {
+    content: '"';
+  }
+  
+  .question::after {
+    content: '"';
+  }
+  .underline {
+    text-decoration: underline;
+    position: relative;
+    bottom: 0.01em;
+  }
+  
+  .names {
+    font-weight: 550;
+    font-size: 1.29em;
+  }
+
+
+
+  /* ------------------Contributors------------------*/
+.container-def {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+    float: left;
+    overflow: auto;
+  }
+  .container-def ul li {
+    margin-left: 2.2em;
+    margin-bottom: 0.3em;
+  }
+  @media (max-width: 375px) {
+    figure img {
+      max-width: 200px;
+    }
+    .container-def {
+      width: 200px;
+    }
+  }
+  
+  @media (min-width: 375px) and (max-width: 728px) {
+    .container-def {
+      min-width: 300px;
+    }
+    figure img {
+      max-width: 300px;
+    }
+  }
+  @media (min-width: 729px) {
+    figure img {
+      max-width: 45%;
+      float: right;
+      height: auto;
+    }
+    .container-def {
+      min-width: 300px;
+    }
+  }
+  @media (min-width: 1024px) {
+    figure img {
+      max-width: 45%;
+    }
+    .container-def {
+      min-width: 300px;
+    }
+  }
+  /* ------------------Table------------------ */
+  table {
+    text-align: center;
+    clear: both;
+  }
+  /* figure img{
+    width: 50%;
+    float: right;
+  } */
+  #bold {
+    font-weight: bold;
+    margin-left: 0.2em;
+    margin-bottom: 0.2em;
+  }
+  .container-def ul {
+    width: 100%;
+  }
+  table {
+    border-collapse: collapse; /* Collapse borders into a single border */
+    border: 2px solid black; /* Add a solid border around the table */
+    margin: 0 auto;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  caption {
+    margin-top: 1em;
+  }
+  
+  /* ------------------ABOUT US------------------ */
+
+.container {
+    margin: 4em;
+    margin-bottom: 0;
+  }
+  .ABOUT-TITLE {
+    font-size: small;
+    margin-bottom: 1em;
+    margin-top: 0px;
+  }
+  
+  .About-title {
+    width: 50%;
+  }
+  @media only screen and (max-width: 743px) {
+    /*   Responsive design */
+    .container-about {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .About-title {
+      width: 100%;
+    }
+  }
+  .container-about {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .About-text {
+    float: left;
+    width: 60%;
+  }
+  .About-des {
+    margin-bottom: 1.2em;
+  }
+  
+  .text-stat {
+    position: relative;
+    font-size: small;
+  }
+  
+  .number-stat {
+    font-size: xx-large;
+    position: relative;
+  }
+  
+  .About-Statistics {
+    float: right;
+  }
+  
+  .About-Statistics h3 {
+    margin: 0.3em;
+  }
+  

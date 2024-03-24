@@ -1,0 +1,17 @@
+/* 
+filename: typewriter.css
+author: Minh Viet, Hallelujah
+created: 1/25/2024
+last modified: 2/23/2024
+description: css file for the application form.
+ */
+
+/* ------------------APPLICATION FORM------------------ */
+.required {
+    color: rgb(177, 0, 0);
+    font-size: larger;
+  }
+   
+  #apply{
+    margin-left: 0.5%;
+  }

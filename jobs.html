@@ -7,19 +7,23 @@
   <title>Job Hunter</title>
   <meta name="description" content="job, career" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Minh Viet" />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/jobs.css" />
   <link rel="stylesheet" href="styles/responsive.css" />
-  <link rel="stylesheet" href="styles/not_my_style.css" />
+  <link rel="stylesheet" href="styles/typewriter.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
-
+  <main>
   <nav id="nav-for-desktop">
     <!-- Main navigation bar -->
-    <div class="col12 s-col12 col" style="display: block">
+    <div class="col12 s-col12 col" id="div-nav-main">
       <div id="main-nav" class="col9 s-col9 col">
-        <a href="index.html"><img src="images/logo.png" alt="job-hunting-icon" /></a>
+        <a href="index.html"
+          ><img src="images/logo.png" alt="job-hunting-icon"
+        /></a>
         <ul>
           <li>
             <a href="index.html"><span>Home</span></a>
@@ -39,11 +43,7 @@
       <div id="sub-nav" class="col2 s-col2 col">
         <ul>
           <li>
-            <a
-              href="https://www.cnbctv18.com/tags/it-jobs.htm"
-              target="_blank"
-              >News</a
-            >
+            <a href="enhancements.html">Enhance</a>
           </li>
           <li>
             <a href="apply.html" target="_blank">Apply your cv</a>
@@ -55,49 +55,54 @@
   </nav>
   <!-- Nav for smaller screen size -->
   <nav id="nav-for-tablet">
-    <a href="index.html"><img src="./images/logo.png" alt="logo" ></a>
+    <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
     <div class="dropdown">
       <div>Menu</div>
       <div class="dropdown-content">
-      <a href="index.html">Home</a> <br>
-      <a href="jobs.html">Potential Jobs</a><br>
-      <a href="about.html">Companies</a><br>
-      <a href="#">Login</a><br>
+        <a href="index.html">Home</a> <br />
+        <a href="jobs.html">Potential Jobs</a><br />
+        <a href="about.html">Companies</a><br />
+        <a href="enhancements.html">Enhance</a><br />
+        <a href="#">Login</a><br />
       </div>
     </div>
   </nav>
+      <!-- Recycled  codes for consistency  -->
+      <!-- starting from here is jobs.html -->
 
+      
 <!-- Banner for jobs -->
   <!-- Banner -->
   <div id="banner" class="col12 s-col12 col">
     <img src="images/job-banner.jpg" alt="banner" class="col12 s-col12 col" />
 
     <div class="wrapper">
-      <div class="typing-demo">Looking for jobs ?
-      </div> 
-      <form action="/processName" method="get">
-        <input type="text" placeholder="Find job by name" id="search-bar" required pattern="^[a-zA-z]+$">
-      </form> 
+      <label for="" class="typing-demo">Looking for jobs ?
+      </label> 
+      <a href="apply.html" class="button" id="APPLY" target="_blank"
+      >Apply now</a
+    >
     </div>
   </div>
-<main>
+
+
     
     <section class="col12 s-col12 col" id="categories">
-      <div class="col12 s-col12 col" style="display: block;">
+      <div class="col12 s-col12 col" id="div-potential-jobs">
         <h1 id="main-header" class="typing-demo col2 s-col2 col">
           Potential jobs
         </h1>
       </div>
-      <div class="col12 s-col12 col" id="grid_view" >
-        <div class="button hover col5 job-category" style="text-align: center;">
-          <strong>Economic Analyst</strong> <br>
-          <img  src="./images/svg/economic-investment-svgrepo-com.svg" alt="" class="svg">
+      <div class="" id="grid_view" >
+        <div class="button hover job-category col5 s-col5 col-">
+          <strong class="job-name">Economic Analyst</strong> <br>
+          <img  src="images/svg/economic-investment-svgrepo-com.svg" alt="abstract image for the Economic Analyst job" class="svg svg-width" >
           <h3>Job description</h3>
           <p>Research, collect, and analyze data to assess economic trends and develop forecasts.</p>
         </div>
-        <div class="button hover col5 job-category" style="text-align: center;">
-          <strong>Software Engineer</strong> <br>
-          <img  src="./images/svg/computer-code-solid-svgrepo-com.svg" alt="" class="svg">
+        <div class="button hover job-category col5 s-col5 col-">
+          <strong class="job-name">Software Engineer</strong> <br>
+          <img  src="images/svg/computer-code-solid-svgrepo-com.svg" alt="abstract image for the Software Engineer job" class="svg svg-width">
           <h3>Job description</h3>  
           <p>The masterminds behind the digital tools and applications that shape our lives. </p>
         </div> 
@@ -111,8 +116,8 @@
       <h1>In-depth Job Insights</h1>
 
       <div class="job-detail">
-        <h2 style="color: #333; margin-bottom: 10px; font-size: calc(1.5vw + 0.6em);">Economic Analyst</h2>
-        <ul style="list-style-type: none; padding: 0;">
+        <h2 class="job-detail-h2">Economic Analyst</h2>
+        <ul class="job-detail-ul">
           <li><strong>Industry:</strong> Finance & Economics</li>
           <li><strong>Role:</strong> Analyze economic scenarios and model economic forecasts.</li>
           <li><strong>Skills Required:</strong> Strong analytical skills, proficiency in statistical software, and understanding of economic trends.</li>
@@ -122,11 +127,12 @@
           <li><strong>Work Environment:</strong> Primarily office-based with opportunities for remote work.</li>
           <li><strong>Key Responsibilities:</strong> Conducting research, preparing reports, and presenting economic forecasts.</li>
           <li><strong>Advancement Opportunities:</strong> Potential to advance to senior analyst positions or specialize in a particular field of economics.</li>
+          <a class="button hover">Apply now</a>
         </ul>
       </div>
       <div class="job-detail">
-        <h2 style="color: #333; margin-bottom: 10px; font-size: calc(1.5vw + 0.6em);">Software Engineer</h2>
-        <ul style="list-style-type: none; padding: 0;">
+        <h2 class="job-detail-h2">Software Engineer</h2>
+        <ul class="job-detail-ul">
           <li><strong>Industry:</strong> Technology & Software Development</li>
           <li><strong>Role:</strong> Design, develop, and maintain software applications.</li>
           <li><strong>Skills Required:</strong> Proficiency in programming languages (e.g., Java, Python, C++), problem-solving, and software development methodologies.</li>
@@ -136,6 +142,7 @@
           <li><strong>Work Environment:</strong> Flexible, with options for in-office, hybrid, or fully remote work.</li>
           <li><strong>Key Responsibilities:</strong> Writing clean, scalable code, collaborating with teams, and troubleshooting software issues.</li>
           <li><strong>Advancement Opportunities:</strong> Opportunities to move into lead developer, architect, or managerial roles.</li>
+          <a class="button hover">Apply now</a>
         </ul>
       </div>
     </section>
@@ -173,10 +180,22 @@
         <div class="footer-co">
           <h4 id="follow">follow us</h4>
           <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              <span class="sr-only">Visit our Facebook page</span>
+            </a>
+            <a href="https://twitter.com/?lang=en" target="_blank"
+              ><i class="fab fa-twitter" aria-hidden="true"></i
+              ><span class="sr-only">Visit our Twitter page</span></a
+            >
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fab fa-instagram" aria-hidden="true"></i
+              ><span class="sr-only">Visit our Instagram page</span></a
+            >
+            <a href="https://www.linkedin.com/" target="_blank"
+              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+              ><span class="sr-only">Visit our Linkedin page</span></a
+            >
           </div>
         </div>
       </div>

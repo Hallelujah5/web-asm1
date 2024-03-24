@@ -1,9 +1,9 @@
 /* 
 filename: style.css
-author: Minh Viet
+author: Minh Viet, Hallelujah
 created: 1/25/2024
-last modified: 1/25/2024
-description: index.html
+last modified: 2/23/2024
+description: css style for almost every html files.
  */
 
 html {
@@ -14,7 +14,7 @@ a {
   text-decoration: none; /*Removes the underline in link*/
 }
 
-/* Navigation bar */
+/* ------------------Navigation bar------------------ */
 
 ul {
   list-style-type: none;
@@ -27,18 +27,25 @@ ul {
   margin-bottom: 2vw;
   display: flex;
 }
-
+#div-nav-main {
+  display: block;
+}
 #nav-for-tablet {
   display: none;
 }
 #nav-for-tablet img {
-  width: calc(150px + 2vw);
-  margin: 2em;
+  width: 40%;
+  margin-left: 10%;
 }
 .dropdown {
   float: right;
-  margin-right: 22vw;
-  margin-top: 2em;
+  width: 50%;
+  text-align: center;
+}
+nav {
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  display: flex;
 }
 
 /* W3school Dropdown */
@@ -61,9 +68,11 @@ ul {
   display: block;
 }
 
-/* Main */
-body {
+/* ------------------Main------------------ */
+main {
   background-color: #fcfbeb;
+  padding-top: 1px;
+  overflow: auto;
 }
 #main-nav {
   margin-left: 2%;
@@ -117,7 +126,7 @@ body {
   margin-right: 0.5vw;
 }
 
-/* Banner */
+/* ------------------Banner------------------ */
 #banner {
   margin-top: 1vw;
   position: relative;
@@ -128,19 +137,20 @@ body {
   border: 0.5vh solid #494949 !important;
   display: inline-block;
   width: 60%;
+  height: 75%;
   margin: 2vw;
-  font-size: 2vw;
+  font-size: 2rem;
   font-family: monospace;
+  text-align: center;
 }
 
-#apply {
+#APPLY {
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(70, 68, 68);
   font-size: calc(10px + 2vw);
 }
-
 .button:hover {
   color: #ffffff !important;
   background: #494949;
@@ -151,7 +161,6 @@ body {
 .button:hover a {
   color: #ffffff;
 }
-
 .button:hover .svg {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(147deg)
     brightness(101%) contrast(102%);
@@ -166,87 +175,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%); /* centering text */
   color: rgb(0, 0, 0); /*visibility*/
+  font-size: 2rem; /* Adjusting font size  */
 }
 
-/* sections */
 
-#main-header {
-  float: left;
-  font-size: calc(5px + 1.2em);
-  margin: 2vw;
-}
+/* ------------------FOOTER------------------ */
 
-#categories {
-  display: flex;
-  flex-direction: column;
-}
-
-#categories div a {
-  color: #2d2f30;
-  font-size: 1em;
-  margin-right: 5%;
-  margin-top: 3%;
-  float: right;
-}
-
-#categories div a:hover {
-  color: #9da3a6;
-}
-
-.box {
-  height: 10vw;
-  margin-left: 5%;
-}
-
-/* About Us */
-
-.container {
-  margin: 4em;
-  margin-bottom: 0;
-}
-.ABOUT-TITLE {
-  font-size: small;
-  margin-bottom: 1em;
-  margin-top: 0px;
-}
-
-.About-title {
-  width: 50%;
-}
-
-.container-about {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.About-text {
-  float: left;
-  width: 60%;
-}
-.About-des {
-  margin-bottom: 1.2em;
-}
-
-.text-stat {
-  position: relative;
-  font-size: small;
-}
-
-.number-stat {
-  font-size: xx-large;
-  position: relative;
-}
-
-.About-Statistics {
-  float: right;
-}
-
-.About-Statistics h3 {
-  margin: 0.3em;
-}
-
-/* Footer */
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 body {
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
@@ -288,10 +223,9 @@ ul {
   position: absolute;
   left: 0;
   bottom: -0.35em;
-  background-color: #e91e63;
+  background-color: #e72465;
   height: 2px;
   box-sizing: border-box;
-  /* width: 50px; */
 }
 .footer-co #website::before {
   content: "";
@@ -344,136 +278,47 @@ ul {
   background-color: #ffffff;
 }
 
-/* POTENTIAL JOBS */
-/* Target the input element specifically */
-#search-bar {
-  /* Basic styling */
-  margin-top: 2vw;
-
-  padding: 0.5vw 1.2vw; /* Add padding for visual appeal */
-  border: 0.1vw solid #ccc; /* Define a border */
-  border-radius: 0.1vw; /* Round the corners */
-  font-size: calc(15px + 1.5vw); /* Set a comfortable font size */
-  box-sizing: border-box; /* Ensure consistent sizing */
-  background-color: transparent;
-  /* Refine appearance on focus */
-  outline: none; /* Remove default outline */
-  border-color: #3f3e3e; /* Highlight border on focus */
-
-  /* Placeholder text styling */
-  color: #999; /* Set placeholder text color */
-}
-
-.headers {
-  margin: 5vw;
-}
-.headers h1 {
-  font-size: 2vw;
-}
-.headers em {
-  font-size: 0.8vw;
-}
-
-#categories div h1 {
-  font-size: calc(1vw + 1em);
-}
-
+/* ------------------GENERAL------------------ */
 #grid_view div {
   margin-left: 4.165%;
 }
 
-.job-category strong {
-  font-size: calc(1vw + 1em);
+
+
+/*Footer responsive*/
+@media (max-width: 767px) {
+  .footer-co {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .svg{
+    display: none;
+  }
+  .button{
+    font-size: 1.5rem;
+  }
 }
-.job-category img {
-  width: calc(10vw + 5em);
-  margin-top: 20px;
-}
-
-#job-details h1{
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 20px;
-}
-
-#job-details .job-detail {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 2rem;
-}
-
-#job-details .job-detail ul li {
-  margin-bottom: 5px;
-  font-size: 1.5rem;
-}
-
-
-/* Media only begin from this part */
-
 @media (max-width: 574px) {
   .footer-co {
     width: 100%;
   }
 }
-
+/* Button responsive */
 @media only screen and (max-width: 600px) {
-  #nav-for-tablet {
-    display: block;
-  }
-  .button {
-    font-size: calc(2vw + 1em);
-  }
-  #grid_view .button {
+  #grid_view button {
     margin: 0;
-    margin-top: 1vw;
   }
-
+  #grid_view div {
+    margin-left: 0%;
+  }
   .box {
     margin-top: 5%;
   }
-  .svg {
+  #nav-for-desktop{
     display: none;
   }
-
-  #banner img {
-    display: none;
-  }
-  #banner {
-    height: 50vw;
-  }
-
-  #nav-for-desktop {
-    display: none;
-  }
-
-  #categories div a {
-    float: left;
-    margin: 2vw;
-  }
-
-  @media only screen and (max-width: 743px) {
-    .container-about {
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-    }
-    .About-title {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .footer-co {
-      width: 50%;
-      margin-bottom: 30px;
-    }
-    .button {
-      margin: 0;
-      margin-top: 3vw;
-      margin-bottom: 3vw;
-    }
+  #nav-for-tablet{
+    display: block;
   }
 }
+

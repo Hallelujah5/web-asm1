@@ -1,0 +1,70 @@
+/* ------------------POTENTIAL JOBS------------------ */
+
+#main-header {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.job-detail-h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: calc(1.5vw + 0.6em);
+}
+.job-detail-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.headers {
+  margin: 5vw;
+}
+.headers h1 {
+  font-size: 2vw;
+}
+.headers em {
+  font-size: 0.8vw;
+}
+
+#categories div h1 {
+  font-size: 2rem;
+}
+
+#categories .job-category strong {
+  font-size: 2rem;
+}
+#categories .job-category img {
+  width: calc(10vw + 5em);
+  margin-top: 20px;
+}
+#categories .job-category h3{
+  font-size: 2rem;
+}
+#categories .job-category p{
+  font-size: 1.5rem;
+}
+
+#job-details h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#job-details .job-detail {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+#job-details .job-detail ul li {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+#job-details .job-detail ul a {
+  width: 30%;
+  padding: 10px;
+  font-size: 1.25rem;
+ }
+

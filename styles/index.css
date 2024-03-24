@@ -1,0 +1,60 @@
+/* 
+filename: style.css
+author: Minh Viet, Hallelujah
+created: 1/25/2024
+last modified: 2/23/2024
+description: css file for index.html
+ */
+
+/* ------------------Greeting section------------------ */
+
+#greeting {
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    height: fit-content;
+  }
+  #greeting h1{
+    font-size: 2rem;
+    width: 10rem;
+  }
+  #greeting p a{
+    text-decoration: underline;
+  }
+  #greeting div{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  #categories {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #categories div a {
+    color: #2d2f30;
+    font-size: 1vw;
+    margin-right: 5%;
+    margin-top: 3%;
+    float: right;
+  }
+  
+  #categories div a:hover {
+    color: #9da3a6;
+  }
+  
+  .box {
+    height: 10vw;
+    margin-left: 5%;
+  }
+  
+  #main-header {
+    float: left;
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  
+
+  

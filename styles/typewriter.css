@@ -1,0 +1,44 @@
+/* 
+filename: typewriter.css
+author: Minh Viet, Hallelujah
+created: 1/25/2024
+last modified: 2/23/2024
+description: css style for every html files.
+ */
+
+
+
+ 
+/* Typing demo */
+.wrapper {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers text */
+    color: rgb(0, 0, 0); /* visibility */
+    font-size: 2rem; 
+  }
+  
+  .typing-demo {
+    width: 20ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;    /*adjust speeds*/
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: calc(1.7rem + 1vw);  /*desired size*/
+  }
+  
+  @keyframes typing {           /*animation*/
+    from {
+      width: 0      /*gradually increases width*/
+    }
+  }
+      
+  @keyframes blink {      /*creates blinking effect*/
+    50% {
+      border-color: transparent
+    }
+  }
