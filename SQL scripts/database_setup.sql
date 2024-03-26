@@ -1,8 +1,13 @@
--- CREATE USER 'assigment2_inquiry'@'localhost' IDENTIFIED BY 'admin';
-
-
 CREATE DATABASE  IF NOT EXISTS company_php;
 
+-- Create user
+-- CREATE USER IF NOT exists 'assignment2_inquiry'@'localhost' IDENTIFIED BY 'admin';
+-- GRANT ALL PRIVILEGES ON company_php.* TO 'assignment2_inquiry'@'localhost';
+-- FLUSH PRIVILEGES;
+-- drop user 'assigment2_inquiry'@'localhost';
+
+
+-- Create table
 use company_php;
 
 CREATE TABLE IF NOT exists users (
