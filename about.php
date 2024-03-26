@@ -18,58 +18,9 @@
   </head>
   <body>
     <main>
-      <nav id="nav-for-desktop">
-        <!-- Main navigation bar -->
-        <div class="col12 s-col12 col" id="div-nav-main">
-          <div id="main-nav" class="col9 s-col9 col">
-            <a href="index.html"
-              ><img src="images/logo.png" alt="job-hunting-icon"
-            /></a>
-            <ul>
-              <li>
-                <a href="index.html"><span>Home</span></a>
-              </li>
-              <li>
-                <a href="jobs.html"><span>Potential jobs</span></a>
-              </li>
-              <li>
-                <a href="about.html"><span>Companies</span></a>
-              </li>
-              <li>
-                <a href="#"><span>Login</span></a>
-              </li>
-            </ul>
-          </div>
-          <!-- Sub navigation bar  -->
-          <div id="sub-nav" class="col2 s-col2 col">
-            <ul>
-              <li>
-                <a href="enhancements.html" target="_blank">Enhance</a>
-              </li>
-              <li>
-                <a href="apply.html" target="_blank">Apply your cv</a>
-              </li>
-              <li><a href="about.html">About us</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Nav for smaller screen size -->
-      <nav id="nav-for-tablet">
-        <a href="index.html"
-          ><img src="images/logo.png" alt="logo of our website"
-        /></a>
-        <div class="dropdown">
-          <div>Menu</div>
-          <div class="dropdown-content">
-            <a href="index.html">Home</a> <br />
-            <a href="jobs.html">Potential Jobs</a><br />
-            <a href="about.html">Companies</a><br />
-            <a href="enhancements.html">Enhance</a><br />
-            <a href="#">Login</a><br />
-          </div>
-        </div>
-      </nav>
+      
+    <!-- Navigation bar -->
+    <?php include 'header.inc'; ?>
 
       <!-- Banner -->
       <div id="banner" class="col12 s-col12 col">
@@ -348,59 +299,8 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-row">
-          <div class="footer-co">
-            <h4 id="website">Website</h4>
-            <!-- Fancy footer, but mostly blank links haha.-->
-            <ul>
-              <li><a href="about.html">about us</a></li>
-              <li><a href="about.html">our services</a></li>
-              <li><a href="about.html">job policy</a></li>
-            </ul>
-          </div>
-          <div class="footer-co">
-            <h4 id="help">help</h4>
-            <ul>
-              <li><a href="#faqs">FAQ</a></li>
-              <li><a href="#">refunds</a></li>
-              <li><a href="apply.html">career resources</a></li>
-              <li><a href="#">payment options</a></li>
-            </ul>
-          </div>
-          <div class="footer-co">
-            <h4 id="member">Memberships</h4>
-            <ul>
-              <li><a href="#">free trial</a></li>
-              <li><a href="#">basic option</a></li>
-              <li><a href="#">long-term plan</a></li>
-              <li><a href="#">premium access</a></li>
-            </ul>
-          </div>
-          <div class="footer-co">
-            <h4 id="follow">follow us</h4>
-            <div class="social-links">
-              <a href="https://www.facebook.com/" target="_blank">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                <span class="sr-only">Visit our Facebook page</span>
-              </a>
-              <a href="https://twitter.com/?lang=en" target="_blank"
-                ><i class="fab fa-twitter" aria-hidden="true"></i
-                ><span class="sr-only">Visit our Twitter page</span></a
-              >
-              <a href="https://www.instagram.com/" target="_blank"
-                ><i class="fab fa-instagram" aria-hidden="true"></i
-                ><span class="sr-only">Visit our Instagram page</span></a
-              >
-              <a href="https://www.linkedin.com/" target="_blank"
-                ><i class="fab fa-linkedin-in" aria-hidden="true"></i
-                ><span class="sr-only">Visit our Linkedin page</span></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer -->
+    <?php include_once 'footer.inc'; ?>
+
   </body>
 </html>
