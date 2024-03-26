@@ -1,4 +1,5 @@
-      <nav id="nav-for-desktop">
+ <?php session_start(); ?>
+ <nav id="nav-for-desktop">
         <!-- Main navigation bar -->
         <div class="col12 s-col12 col" id="div-nav-main">
           <div id="main-nav" class="col9 s-col9 col">
@@ -15,9 +16,22 @@
               <li>
                 <a href="about.php"><span>Companies</span></a>
               </li>
+
+              <?php 
+                if (!isset($_SESSION['role'])) {
+              ?>
               <li>
-                <a href="#"><span>Login</span></a>
+                <a href="login.php"><span>Login</span></a>
               </li>
+              <?php 
+                } else {
+              ?>
+              <li>
+                <a href="logout.php"><span>Logout</span></a>
+              </li>
+              <?php
+                }
+              ?>
             </ul>
           </div>
           <!-- Sub navigation bar  -->
@@ -44,7 +58,7 @@
             <a href="jobs.php">Potential Jobs</a><br />
             <a href="about.php">Companies</a><br />
             <a href="enhancements.php">Enhance</a><br />
-            <a href="#">Login</a><br />
+            <a href="login.php">Login</a><br />
           </div>
         </div>
       </nav>

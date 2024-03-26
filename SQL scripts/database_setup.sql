@@ -6,6 +6,9 @@ CREATE DATABASE  IF NOT EXISTS company_php;
 -- FLUSH PRIVILEGES;
 -- drop user 'assigment2_inquiry'@'localhost';
 
+-- drop table skills;
+-- drop table users;
+
 
 -- Create table
 use company_php;
@@ -15,13 +18,14 @@ CREATE TABLE IF NOT exists users (
   job_reference_number CHAR(5) DEFAULT NULL,
   first_name VARCHAR(20) NOT NULL,
   last_name VARCHAR(20) NOT NULL,
+  password VARCHAR(20) NOT NULL,
   date_of_birth DATE NOT NULL,
   gender BIT(1) DEFAULT NULL,
   street_address VARCHAR(40) NOT NULL,
   suburb_town VARCHAR(40) NOT NULL,
   state CHAR(3) NOT NULL,
   postcode INT(4) NOT NULL,
-  email_address VARCHAR(255) NOT NULL UNIQUE,
+  email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
   role BIT(1) DEFAULT 0
 );
@@ -32,6 +36,10 @@ CREATE TABLE IF NOT exists skills (
   user_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+-- 0 male, 1 female
+-- 0 user, 1 manager
+-- Sample
+INSERT INTO users (first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, role, password)
+VALUES ('John', 'Doe', '1990-01-01', 0, '123 Main Street', 'Anytown', 'NSW', 1234, 'johndoe@example.com', '0412345678', 0, 'password123');
 
-
-
+select * from users;

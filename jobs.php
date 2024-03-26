@@ -19,7 +19,7 @@
   <main>
   
   <!-- Navigation -->
-  <?php include 'header.inc'; ?>
+  <?php include 'header.php'; ?>
       
 <!-- Banner for jobs -->
   <!-- Banner -->

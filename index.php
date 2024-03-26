@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+<?php include_once 'sessionConfig.php'; ?>
+
 <html lang="en">
+
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,8 +23,8 @@
     <main>
       
       <!-- Navigation bar -->
-      <?php include_once 'header.inc'; ?>
-
+      <?php include_once 'header.php'; ?>
+      
       <!-- Banner -->
       <div id="banner" class="col12 s-col12 col">
         <img src="images/banner.jpg" alt="banner" class="col12 s-col12 col" />

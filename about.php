@@ -20,7 +20,7 @@
     <main>
       
     <!-- Navigation bar -->
-    <?php include 'header.inc'; ?>
+    <?php include 'header.php'; ?>
 
       <!-- Banner -->
       <div id="banner" class="col12 s-col12 col">
