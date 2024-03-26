@@ -6,8 +6,8 @@ CREATE DATABASE  IF NOT EXISTS company_php;
 -- FLUSH PRIVILEGES;
 -- drop user 'assigment2_inquiry'@'localhost';
 
--- drop table skills;
--- drop table users;
+drop table skills;
+drop table users;
 
 
 -- Create table
@@ -27,6 +27,7 @@ CREATE TABLE IF NOT exists users (
   postcode INT(4) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
+  status BIT(1) DEFAULT 1,
   role BIT(1) DEFAULT 0
 );
 
