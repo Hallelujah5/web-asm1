@@ -27,7 +27,7 @@ CREATE TABLE IF NOT exists users (
   postcode INT(4) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
-  status BIT(1) DEFAULT 1,
+  status ENUM('New', 'Current', 'Final') DEFAULT 'New'
   role BIT(1) DEFAULT 0
 );
 
