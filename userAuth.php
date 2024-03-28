@@ -4,6 +4,7 @@ session_start();
 
 include("dbConnect.php");
 
+
 if(isset($_POST["email"]) && $_POST["email"] != "" && isset($_POST["password"]) && $_POST["password"] != "") {
     $email = $_POST["email"];
     $password = $_POST["password"];
