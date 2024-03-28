@@ -19,7 +19,7 @@ CREATE TABLE IF NOT exists users (
   password VARCHAR(20) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
-  status ENUM('New', 'Current', 'Final') DEFAULT 'New',
+  status BIT(1) DEFAULT 1,
   role BIT(1) DEFAULT 0
 );
 
@@ -29,7 +29,6 @@ CREATE TABLE IF NOT exists eoi (
   job_reference_number CHAR(5) DEFAULT NULL,
   first_name VARCHAR(20) NOT NULL,
   last_name VARCHAR(20) NOT NULL,
-  password VARCHAR(20) NOT NULL,
   date_of_birth DATE NOT NULL,
   gender BIT(1) DEFAULT NULL,
   street_address VARCHAR(40) NOT NULL,
@@ -38,6 +37,7 @@ CREATE TABLE IF NOT exists eoi (
   postcode INT(4) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
+  status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 );
 
 CREATE TABLE IF NOT exists skills (
