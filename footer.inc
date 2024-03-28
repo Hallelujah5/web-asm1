@@ -6,9 +6,9 @@
           <div class="footer-co">
             <h4 id="website">Website</h4>
             <ul>
-              <li><a href="about.html">about us</a></li>
-              <li><a href="about.html">our services</a></li>
-              <li><a href="about.html">job policy</a></li>
+              <li><a href="about.php">about us</a></li>
+              <li><a href="about.php">our services</a></li>
+              <li><a href="about.php">job policy</a></li>
             </ul>
           </div>
           <div class="footer-co">
@@ -16,7 +16,7 @@
             <ul>
               <li><a href="#">FAQ</a></li>
               <li><a href="#">refunds</a></li>
-              <li><a href="apply.html">Job status</a></li>
+              <li><a href="apply.php">Job status</a></li>
               <li><a href="#">payment options</a></li>
             </ul>
           </div>
