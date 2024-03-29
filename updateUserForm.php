@@ -57,7 +57,10 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                     <option value="New" <?php if($user['status'] == 'New') echo 'selected'; ?>>New</option><br>
                     <option value="Current" <?php if($user['status'] == 'Current') echo 'selected'; ?>>Current</option><br>
                     <option value="Final" <?php if($user['status'] == 'Final') echo 'selected'; ?>>Final</option><br> 
-                </select><br><br>
+                </select><br>
+                <label for="other_skills">Other skills:</label><br>
+                <input type="text" id="other_skills" name="other_skills" value="<?php echo $user['other_skills']; ?>" required><br>
+                <br><br>
                 <button type="submit">Update User</button><br>
             </form>
         <?php

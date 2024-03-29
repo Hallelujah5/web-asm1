@@ -29,10 +29,11 @@ if(isset($_POST["action"]) && isset($_POST["id"])){
             $postcode = $_POST["postcode"];
             $phone_number = $_POST["phone_number"];
             $status = $_POST["status"];
+            $other_skills = $_POST["other_skills"];
 
             updateEois($id, $first_name, $last_name, $email, $job_reference_number
             , $date_of_birth, $gender, $street_address, $suburb_town,
-            $postcode, $phone_number, $status);
+            $postcode, $phone_number, $status, $other_skills);
 
             header("Location: manager.php");
             exit();
@@ -71,7 +72,7 @@ function searchByIdNameEmail($searchString) {
     include_once("dbConnect.php");
 
     $searchString = strip_tags(trim($searchString));
-    
+
     $searchString = "%" . $searchString . "%";
     $query = "SELECT * FROM eoi WHERE email LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR id LIKE ?";
     $stmt = mysqli_prepare($conn, $query);
@@ -90,14 +91,14 @@ function searchByIdNameEmail($searchString) {
 }
 
 function updateEois($id, $first_name, $last_name, $email, $job_reference_number
-, $date_of_birth, $gender, $street_address, $suburb_town, $postcode, $phone_number, $status) {
+, $date_of_birth, $gender, $street_address, $suburb_town, $postcode, $phone_number, $status, $other_skills) {
     include_once("dbConnect.php");
 
     print "$gender";
 
-    $query = "UPDATE eoi SET first_name = ?, last_name = ?, email = ?, job_reference_number = ?, date_of_birth = ?, gender = ?, street_address = ?, suburb_town = ?, status = ?, postcode = ?, phone_number = ? WHERE id = ?";
+    $query = "UPDATE eoi SET first_name = ?, last_name = ?, email = ?, job_reference_number = ?, date_of_birth = ?, gender = ?, street_address = ?, suburb_town = ?, status = ?, postcode = ?, phone_number = ?, other_skills = ? WHERE id = ?";
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "sssssisssssi", $first_name, $last_name, $email, $job_reference_number, $date_of_birth, $gender, $street_address, $suburb_town, $status, $postcode, $phone_number, $id);
+    mysqli_stmt_bind_param($stmt, "sssssissssssi", $first_name, $last_name, $email, $job_reference_number, $date_of_birth, $gender, $street_address, $suburb_town, $status, $postcode, $phone_number, $other_skills, $id);
 
     mysqli_stmt_execute($stmt);
     $success = mysqli_stmt_affected_rows($stmt);
@@ -110,6 +111,25 @@ function updateEois($id, $first_name, $last_name, $email, $job_reference_number
     mysqli_close($conn);
 
     return $success;
+}
+
+function searchSkillsById($id) {
+    include_once("dbConnect.php");
+
+    $query = "SELECT s.skill_name FROM skills s JOIN eoi_skills es ON s.id = es.skill_id WHERE es.eoi_id = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    
+    if (!$result) {
+        die("Error retrieving skills: " . mysqli_error($conn));
+    }
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    return $result;
 }
 
 ?>

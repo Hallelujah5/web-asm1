@@ -49,7 +49,8 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                 <th>Postcode</th>
                 <th>Phone Number</th>
                 <th>Status</th>
-                <th>Other skills</th>
+                <th>Skills</th>
+                <th>Details</th>
                 <th>Action</th>
             </tr>
             <?php
@@ -68,6 +69,13 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                     echo "<td>" . $eoi['postcode'] . "</td>";
                     echo "<td>" . $eoi['phone_number'] . "</td>";
                     echo "<td>" . $eoi['status'] . "</td>";
+
+                    $skills = searchSkillsById( $eoi["id"]);
+                    while ($skill = mysqli_fetch_assoc($skills)) {
+                        echo "<td>" 
+                        . $skill;
+                    }
+                    "</td>";
 
                     if($eoi["other_skills"] == null || $eoi["other_skills"] == ""){
                         echo "<td> No other skill </td>";

@@ -45,7 +45,7 @@ CREATE TABLE IF NOT exists eoi (
 
 CREATE TABLE IF NOT exists skills (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  skill_name VARCHAR(50) NOT NULL
+  skill_name VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT exists eoi_skills(
@@ -79,4 +79,12 @@ VALUES ('JKL78', 'Lisa', 'Brown', '2000-03-08', 1, '44 Fourth Lane', 'Townsville
 INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, status)
 VALUES ('MNO', 'John', 'Doe', '1990-01-01', 1, '1 Main Street', 'Anytown', 'NSW', 1234, 'johnny2005@example.com', '0412345678', 1);
 
-select * from eoi;
+INSERT INTO skills (skill_name) VALUES
+('Java'),
+('PHP'),
+('Javascript'),
+('C++');
+
+INSERT INTO eoi_skills VALUES (1,1);
+
+select * from eoi_skills;
