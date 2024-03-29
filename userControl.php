@@ -41,6 +41,29 @@ if(isset($_POST["action"]) && isset($_POST["id"])){
 }
 }
 
+// function searchSkillsById($id) {
+    
+
+//     $query = "SELECT s.skill_name FROM skills s JOIN eoi_skills es ON s.id = es.skill_id WHERE es.eoi_id = ?";
+//     $stmt = mysqli_prepare($conn, $query);
+//     if (!$stmt) {
+//         die("Error preparing statement: " . mysqli_error($conn));
+//     }
+    
+//     mysqli_stmt_bind_param($stmt, "i", $id);
+
+//     mysqli_stmt_execute($stmt);
+//     $result = mysqli_stmt_get_result($stmt);
+    
+//     if (!$result) {
+//         die("Error retrieving skills: " . mysqli_error($conn));
+//     }
+
+//     mysqli_stmt_close($stmt);
+//     mysqli_close($conn);
+//     return $result;
+// }
+
 function deleteEoi($id){
     include_once("dbConnect.php");
 
@@ -94,8 +117,6 @@ function updateEois($id, $first_name, $last_name, $email, $job_reference_number
 , $date_of_birth, $gender, $street_address, $suburb_town, $postcode, $phone_number, $status, $other_skills) {
     include_once("dbConnect.php");
 
-    print "$gender";
-
     $query = "UPDATE eoi SET first_name = ?, last_name = ?, email = ?, job_reference_number = ?, date_of_birth = ?, gender = ?, street_address = ?, suburb_town = ?, status = ?, postcode = ?, phone_number = ?, other_skills = ? WHERE id = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "sssssissssssi", $first_name, $last_name, $email, $job_reference_number, $date_of_birth, $gender, $street_address, $suburb_town, $status, $postcode, $phone_number, $other_skills, $id);
@@ -113,23 +134,5 @@ function updateEois($id, $first_name, $last_name, $email, $job_reference_number
     return $success;
 }
 
-function searchSkillsById($id) {
-    include_once("dbConnect.php");
-
-    $query = "SELECT s.skill_name FROM skills s JOIN eoi_skills es ON s.id = es.skill_id WHERE es.eoi_id = ?";
-    $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "i", $id);
-
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    
-    if (!$result) {
-        die("Error retrieving skills: " . mysqli_error($conn));
-    }
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
-
-    return $result;
-}
 
 ?>
