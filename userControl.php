@@ -71,9 +71,11 @@ function searchByIdNameEmail($searchString) {
     include_once("dbConnect.php");
 
     $searchString = strip_tags(trim($searchString));
-    $query = "SELECT * FROM eoi WHERE email = ? OR first_name = ? OR last_name = ? OR id = ?";
+    
+    $searchString = "%" . $searchString . "%";
+    $query = "SELECT * FROM eoi WHERE email LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR id LIKE ?";
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "sssi", $searchString, $searchString, $searchString, $searchString);
+    mysqli_stmt_bind_param($stmt, "ssss", $searchString, $searchString, $searchString, $searchString);
 
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);

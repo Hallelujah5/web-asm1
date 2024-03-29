@@ -6,6 +6,7 @@ CREATE DATABASE  IF NOT EXISTS company_php;
 -- FLUSH PRIVILEGES;
 -- drop user 'assigment2_inquiry'@'localhost';
 
+drop table eoi_skills;
 drop table skills;
 drop table users;
 drop table eoi;
@@ -38,15 +39,25 @@ CREATE TABLE IF NOT exists eoi (
   postcode INT(4) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
+  other_skills VARCHAR(2000) DEFAULT NULL,
   status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 );
 
 CREATE TABLE IF NOT exists skills (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  skill_name VARCHAR(50) NOT NULL,
-  eoi_id INT NOT NULL,
-  FOREIGN KEY (eoi_id) REFERENCES eoi(id)
+  skill_name VARCHAR(50) NOT NULL
 );
+
+CREATE TABLE IF NOT exists eoi_skills(
+  skill_id INT NOT NULL,
+  eoi_id INT NOT NULL,
+  FOREIGN KEY (eoi_id) REFERENCES eoi(id),
+  FOREIGN KEY (skill_id) REFERENCES skills(id)
+);
+
+
+
+
 -- 0 male, 1 female
 -- 0 user, 1 manager
 -- Sample
@@ -68,4 +79,4 @@ VALUES ('JKL78', 'Lisa', 'Brown', '2000-03-08', 1, '44 Fourth Lane', 'Townsville
 INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, status)
 VALUES ('MNO', 'John', 'Doe', '1990-01-01', 1, '1 Main Street', 'Anytown', 'NSW', 1234, 'johnny2005@example.com', '0412345678', 1);
 
-select * from users;
+select * from eoi;

@@ -34,7 +34,7 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                 $eois = searchByIdNameEmail($_GET["search"]);
             }
         ?>
-        <table>
+        <table border="1">
             <tr>
                 <th>EOI ID</th>
                 <th>Job reference number</th>
@@ -49,6 +49,7 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                 <th>Postcode</th>
                 <th>Phone Number</th>
                 <th>Status</th>
+                <th>Other skills</th>
                 <th>Action</th>
             </tr>
             <?php
@@ -67,6 +68,14 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                     echo "<td>" . $eoi['postcode'] . "</td>";
                     echo "<td>" . $eoi['phone_number'] . "</td>";
                     echo "<td>" . $eoi['status'] . "</td>";
+
+                    if($eoi["other_skills"] == null || $eoi["other_skills"] == ""){
+                        echo "<td> No other skill </td>";
+                    } else {
+                        echo "<td>" . $eoi['other_skills'] . "</td>";
+                    }
+
+
                     echo 
                     "<td>
                         <form method='post' action='userControl.php'>
