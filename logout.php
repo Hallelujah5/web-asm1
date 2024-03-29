@@ -14,6 +14,6 @@ session_destroy();
 <body>
     <a href="index.php" class="backbutton"></a>
     <h1>You have been logged out <span class="tick">&#10004;</span> </h1>
-    <p><a href="login.html" class="button">Login Again</a></p>
+    <p><a href="login.php" class="button">Login Again</a></p>
 </body>
 </html>

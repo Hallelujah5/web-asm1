@@ -20,7 +20,7 @@ CREATE TABLE IF NOT exists users (
   password VARCHAR(20) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
-  status BIT(1) DEFAULT 1,
+  banned BIT(1) DEFAULT 0,
   role BIT(1) DEFAULT 0
 );
 
@@ -44,14 +44,17 @@ CREATE TABLE IF NOT exists eoi (
 CREATE TABLE IF NOT exists skills (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   skill_name VARCHAR(50) NOT NULL,
-  user_id INT NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES eoi(id)
+  eoi_id INT NOT NULL,
+  FOREIGN KEY (eoi_id) REFERENCES eoi(id)
 );
 -- 0 male, 1 female
 -- 0 user, 1 manager
 -- Sample
 INSERT INTO users (email, phone_number, role, password)
 VALUES ('johndoe@example.com', '0412345678', 0, 'password123');
+
+INSERT INTO users (email, phone_number, role, password)
+VALUES ('jane@example.com', '0487654321', 1, 'password123');
 
 INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, status)
 VALUES ('ABC12', 'John', 'Doe', '1990-01-01', 1, '1 Main Street', 'Anytown', 'NSW', 1234, 'johndoe@example.com', '0412345678', 1);
@@ -62,4 +65,7 @@ VALUES ('DEF34', 'Jane', 'Smith', '1995-07-15', 0, '22 Second Avenue', 'Bigtown'
 INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, status)
 VALUES ('JKL78', 'Lisa', 'Brown', '2000-03-08', 1, '44 Fourth Lane', 'Townsville', 'SA', 5678, 'lisaaabrown@example', '0456789012', 1);
 
-select * from eoi;
+INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, status)
+VALUES ('MNO', 'John', 'Doe', '1990-01-01', 1, '1 Main Street', 'Anytown', 'NSW', 1234, 'johnny2005@example.com', '0412345678', 1);
+
+select * from users;

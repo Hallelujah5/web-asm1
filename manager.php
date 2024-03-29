@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +19,7 @@
 
         <form action="manager.php" method="get">
             <label for="search">Search:</label>
-            <input type="text" id="search" name="search" placeholder="Enter search term">
+            <input type="text" id="search" name="search" placeholder="Enter search for email, name or user id">
             <button type="submit">Submit</button>
         </form>
 
@@ -25,7 +31,7 @@
                 $eois = selectAllEois();
             }
             else{
-                $eois = searchByEoiId($_GET["search"]);
+                $eois = searchByIdNameEmail($_GET["search"]);
             }
         ?>
         <table>
@@ -43,6 +49,7 @@
                 <th>Postcode</th>
                 <th>Phone Number</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
             <?php
                 while ($eoi = mysqli_fetch_assoc($eois)) {
@@ -60,6 +67,19 @@
                     echo "<td>" . $eoi['postcode'] . "</td>";
                     echo "<td>" . $eoi['phone_number'] . "</td>";
                     echo "<td>" . $eoi['status'] . "</td>";
+                    echo 
+                    "<td>
+                        <form method='post' action='userControl.php'>
+                            <input type='hidden' name='id' value='" . $eoi['id'] . "'>
+                            <input type='hidden' name='action' value='DELETE'>
+                            <button type='submit'>Delete</button>
+                        </form>
+
+                        <form method='get' action='updateUserForm.php'>
+                            <input type='hidden' name='id' value='" . $eoi['id'] . "'>
+                            <button type='submit'>Update</button>
+                        </form>
+                    </td>";
                     echo "</tr>";
                 }
             ?>
