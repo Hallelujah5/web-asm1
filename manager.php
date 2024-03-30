@@ -22,6 +22,12 @@
             include_once("eoiControl.php");
             include_once("workControl.php");
 
+            session_start();
+            if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
+                header("Location: login.php");
+            }
+
+
             if(!isset($_GET["search"]) || $_GET["search"] == ""){
                 $eois = selectAllEois();
             }
@@ -46,6 +52,7 @@
                 <th>Status</th>
                 <th>Skills</th>
                 <th>Details</th>
+                <th>CV</th>
                 <th>Action</th>
             </tr>
             <?php
@@ -76,7 +83,15 @@
                     } else {
                         echo "<td>" . $eoi['other_skills'] . "</td>";
                     }
-
+                    if($eoi['cv_id'] != null){
+                        echo "<td>"
+                        . "<a href='cv_uploaded/" . $eoi['cv_id'] . "' download='" . $eoi['first_name'] . $eoi['last_name'] . ".pdf'>Download PDF</a>" . 
+                        "</td>";
+                    } else {
+                        echo "<td>"
+                        . "No cv has been included" . 
+                        "</td>";
+                    }
 
                     echo 
                     "<td>

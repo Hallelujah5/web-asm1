@@ -1,10 +1,6 @@
 <?php
 include_once("dbConnect.php");
 
-session_start();
-if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
-    header("Location: login.php");
-}
 
 if (isset($_POST["action"]) && isset($_POST["id"])) {
     $action = $_POST["action"];
@@ -147,7 +143,7 @@ function searchById($searchString)
     return $result;
 }
 
-function insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills, $skills)
+function insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills, $skills, $cv)
 {
     global $conn;
     // Create query table if not already existed
@@ -168,16 +164,21 @@ function insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, 
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 );";
 
+
+
     mysqli_query($conn, $createTableEOIQuery);
 
-    // Insert data into the EOI table
-    $query = "INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, other_skills) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "ssssisssssss", $jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills);
+    // Generate a unique filename for cv
+    $newFileName = uniqid('', true) . '.pdf';
 
+    // Insert data into the EOI table
+    $query = "INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, other_skills, cv_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "ssssissssssss", $jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills, $newFileName);
     if (mysqli_stmt_execute($stmt)) {
         $EOInumber = mysqli_insert_id($conn); // Get the auto-generated EOI number
-        
+        uploadCv($cv, $newFileName) ;
+
         if($skills != null) {
             foreach ($skills as $skill) {
                 $insertSkillQuery = "INSERT INTO eoi_skills (eoi_id, skill_id) VALUES (?, ?)";
@@ -187,7 +188,7 @@ function insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, 
                 mysqli_stmt_close($stmtSkill);
             }
         }
-    
+        
         echo "<p>Submission successfully. Thank you for your expression of interest. Your EOInumber is $EOInumber.</p>";
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
@@ -196,4 +197,40 @@ function insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, 
     mysqli_close($conn);
 }
 
-?>
+
+function uploadCv($cv, $newFileName){
+    // Define a directory to store uploaded PDFs (outside the web root for security)
+    $uploadDir = 'cv_uploaded/';
+
+    // Check if form is submitted and there's no error
+    if ($cv != null ) {
+
+    // Get file information
+    $tempFileName = $cv['tmp_name'];
+    $fileSize = $cv['size'];
+
+    // Validate file type (optional)
+    $fileType = mime_content_type($tempFileName);
+    if ($fileType !== 'application/pdf') {
+        echo 'Invalid file type. Please upload a PDF file.';
+        exit;
+    }
+
+    // Validate file size 
+    if ($fileSize > 1000000) { // 1MB limit 
+        echo 'File size exceeds limit (1MB). Please upload a smaller file.';
+        exit;
+    }
+
+    // Move the uploaded file to the designated directory
+    if (move_uploaded_file($tempFileName, $uploadDir . $newFileName)) {
+        echo 'CV uploaded successfully!';
+    } else {
+        echo 'There was an error uploading the file. Please try again.';
+    }
+    } else {
+    // Handle potential errors 
+    echo 'Please select a PDF file to upload.';
+    }
+
+}

@@ -11,7 +11,12 @@
     <body>
 
         <?php
-            if(isset($_GET["id"])){
+        session_start();
+        if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
+            header("Location: login.php");
+        }
+        
+        if(isset($_GET["id"])){
                 include_once("eoiControl.php");
                 $result = searchById($_GET["id"]);
                 if($user = mysqli_fetch_assoc($result)){

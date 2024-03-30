@@ -40,6 +40,7 @@ CREATE TABLE IF NOT exists eoi (
   email VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(12) NOT NULL,
   other_skills VARCHAR(2000) DEFAULT NULL,
+  cv_id VARCHAR(255) DEFAULT NULL,
   status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 );
 

@@ -45,6 +45,7 @@
         action="processEOI.php"
         method="post" id="apply"
         novalidate="novalidate"
+        enctype="multipart/form-data"
       >
         <p>
           <label for="Name"><b>Given Name</b></label>
@@ -210,8 +211,8 @@
         ><br />
 
         <label for="cv"><strong>Apply your CV here</strong></label> <br>
-        <input type="file" id="cv" name="cv" accept=".pdf"> <br>
 
+        <input type="file" id="cv" name="cv" accept=".pdf"> <br>
         <input type="submit" value="Apply" />
 
       </form>

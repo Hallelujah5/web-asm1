@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phone = isset($_POST["phone"]) ? sanitize_input($_POST["phone"]) : "";
         $otherSkills = isset($_POST["other"]) ? sanitize_input($_POST["other"]) : "";
         $skills = isset($_POST["skill"]) ? $_POST["skill"] : null;
+        $cv =  isset($_FILES["cv"]) ? $_FILES["cv"] : null ;
 
         $errMsg = "";
         if ($firstName == "") {
@@ -65,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $errMsg;
             exit;
         } else {
-          insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills, $skills);
+          insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills, $skills, $cv);
         }
     }
 
