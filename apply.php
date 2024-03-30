@@ -21,6 +21,7 @@
     
     <!-- Navigation bar -->
     <?php include 'header.php'; ?>
+    <?php include 'workControl.php'; ?>
 
       <!-- Banner -->
       <div id="banner" class="col12 s-col12 col">
@@ -41,8 +42,9 @@
     <fieldset>
       <legend><strong><h2>Job Application Form</h2></strong></legend>
       <form
-        action="https://mercury.swin.edu.au/it000000/formtest.php"
+        action="processEOI.php"
         method="post" id="apply"
+        novalidate="novalidate"
       >
         <p>
           <label for="Name"><b>Given Name</b></label>
@@ -80,10 +82,10 @@
 
         <p>
           <b>Job Preference</b><span class="required">*</span>
-          <select name="State" id="State">
+          <select name="JobPref" id="JobPref">
             <option value="">Select your Job..</option>
-            <option value="Economic Analyst">Economic Analyst</option>
-            <option value="Software Engineer">Software Engineer</option>
+            <option value="econo">Economic Analyst</option>
+            <option value="softw">Software Engineer</option>
           </select>
         </p>
 
@@ -93,14 +95,12 @@
         <fieldset>
           <legend>Gender<span class="required">*</span></legend>
           <p>
-            <input type="radio" id="Male" name="gender" value="Male" required />
+            <input type="radio" id="Male" name="gender" value="0" required />
             <label for="Male">Male</label>
 
-            <input type="radio" id="Female" name="gender" value="Female" />
+            <input type="radio" id="Female" name="gender" value="1" />
             <label for="Female">Female</label>
 
-            <input type="radio" id="bi" name="gender" value="bi" />
-            <label for="bi">Preferred not say</label>
           </p>
         </fieldset>
 
@@ -187,38 +187,16 @@
         <fieldset>
           <legend>Skill list<span class="required">*</span></legend>
           <p>
-            <label for="html">HTML</label>
-            <input
-              type="checkbox"
-              id="html"
-              name="skill[]"
-              value="html"
-            />&nbsp;
-            <label for="CSS">CSS</label>
-            <input type="checkbox" id="CSS" name="skill[]" value="CSS" />&nbsp;
-            <label for="Javascript">Javascript</label>
-            <input
-              type="checkbox"
-              id="Javascript"
-              name="skill[]"
-              value="Javascript"
-            />&nbsp;
-            <label for="Github">Github</label>
-            <input
-              type="checkbox"
-              id="Github"
-              name="skill[]"
-              value="Github"
-            />&nbsp;
-            <label for="PHP">PHP</label>
-            <input type="checkbox" id="PHP" name="skill[]" value="PHP" />&nbsp;
-            <label for="Other">Other skills...</label>
-            <input
-              type="checkbox"
-              id="Other"
-              name="skill[]"
-              value="Other"
-            />&nbsp;
+
+            <?php 
+              $skills = getAllSkills();
+              while ($skill = mysqli_fetch_array($skills)) {
+                echo '<label for="' . $skill['skill_name'] . '">' . $skill['skill_name'] . '</label>';
+                echo '<input type="checkbox" id="' . $skill['skill_name'] . '" name="skill[]" value="' . $skill['id'] . '" />&nbsp; &nbsp;'; 
+              }
+            ?>
+            
+
           </p>
         </fieldset>
         <label for="other">Please list your other skills below:</label><br />

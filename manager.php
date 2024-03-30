@@ -1,9 +1,3 @@
-<?php 
-session_start();
-if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
-    header("Location: login.php");
-}
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +19,8 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
 
     
         <?php
-            include_once("userControl.php");
+            include_once("eoiControl.php");
+            include_once("workControl.php");
 
             if(!isset($_GET["search"]) || $_GET["search"] == ""){
                 $eois = selectAllEois();
@@ -49,7 +44,7 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                 <th>Postcode</th>
                 <th>Phone Number</th>
                 <th>Status</th>
-                <!-- <th>Skills</th> -->
+                <th>Skills</th>
                 <th>Details</th>
                 <th>Action</th>
             </tr>
@@ -69,9 +64,12 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
                     echo "<td>" . $eoi['postcode'] . "</td>";
                     echo "<td>" . $eoi['phone_number'] . "</td>";
                     echo "<td>" . $eoi['status'] . "</td>";
-
-                    // $skills = searchSkillsById( $eoi["id"]);
-                    // echo "$skills";        
+                    echo "<td>";
+                    $skills = searchSkillsById($eoi['id']);
+                    while ($skill = mysqli_fetch_assoc($skills)) {
+                        echo $skill['skill_name'] . " ";
+                    }
+                    echo '</td>';
 
                     if($eoi["other_skills"] == null || $eoi["other_skills"] == ""){
                         echo "<td> No other skill </td>";
@@ -82,7 +80,7 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
 
                     echo 
                     "<td>
-                        <form method='post' action='userControl.php'>
+                        <form method='post' action='eoiControl.php'>
                             <input type='hidden' name='id' value='" . $eoi['id'] . "'>
                             <input type='hidden' name='action' value='DELETE'>
                             <button type='submit'>Delete</button>

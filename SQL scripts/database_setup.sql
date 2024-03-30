@@ -49,10 +49,11 @@ CREATE TABLE IF NOT exists skills (
 );
 
 CREATE TABLE IF NOT exists eoi_skills(
-  skill_id INT NOT NULL,
   eoi_id INT NOT NULL,
+  skill_id INT NOT NULL,
   FOREIGN KEY (eoi_id) REFERENCES eoi(id),
-  FOREIGN KEY (skill_id) REFERENCES skills(id)
+  FOREIGN KEY (skill_id) REFERENCES skills(id),
+  PRIMARY KEY (eoi_id, skill_id)
 );
 
 
@@ -86,5 +87,7 @@ INSERT INTO skills (skill_name) VALUES
 ('C++');
 
 INSERT INTO eoi_skills VALUES (1,1);
+INSERT INTO eoi_skills VALUES (1,2);
+INSERT INTO eoi_skills VALUES (1,3);
 
-select * from eoi_skills;
+select * from eoi;

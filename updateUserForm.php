@@ -1,10 +1,3 @@
-<?php 
-session_start();
-if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
-    header("Location: login.php");
-}
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,13 +12,13 @@ if(!isset($_SESSION["role"]) ||  $_SESSION["role"] == 0){
 
         <?php
             if(isset($_GET["id"])){
-                include_once("userControl.php");
-                $result = searchByIdNameEmail($_GET["id"]);
+                include_once("eoiControl.php");
+                $result = searchById($_GET["id"]);
                 if($user = mysqli_fetch_assoc($result)){
         ?>
             
             <h1>Update user form</h1>
-            <form method="post" action="userControl.php">
+            <form method="post" action="eoiControl.php">
                 <input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>"><br>
                 <input type="hidden" name="action" value="UPDATE"><br>
                 <label for="first_name">First Name:</label><br>
