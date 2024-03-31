@@ -198,23 +198,27 @@ function insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, 
     $query = "INSERT INTO eoi (job_reference_number, first_name, last_name, date_of_birth, gender, street_address, suburb_town, state, postcode, email, phone_number, other_skills, cv_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "ssssissssssss", $jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills, $newFileName);
-    if (mysqli_stmt_execute($stmt)) {
-        $EOInumber = mysqli_insert_id($conn); // Get the auto-generated EOI number
-        uploadCv($cv, $newFileName) ;
+    try {
+        if (mysqli_stmt_execute($stmt)) {
+            $EOInumber = mysqli_insert_id($conn); // Get the auto-generated EOI number
+            uploadCv($cv, $newFileName) ;
 
-        if($skills != null) {
-            foreach ($skills as $skill) {
-                $insertSkillQuery = "INSERT INTO eoi_skills (eoi_id, skill_id) VALUES (?, ?)";
-                $stmtSkill = mysqli_prepare($conn, $insertSkillQuery);
-                mysqli_stmt_bind_param($stmtSkill, "ii", $EOInumber, $skill);
-                mysqli_stmt_execute($stmtSkill);
-                mysqli_stmt_close($stmtSkill);
+            if($skills != null) {
+                foreach ($skills as $skill) {
+                    $insertSkillQuery = "INSERT INTO eoi_skills (eoi_id, skill_id) VALUES (?, ?)";
+                    $stmtSkill = mysqli_prepare($conn, $insertSkillQuery);
+                    mysqli_stmt_bind_param($stmtSkill, "ii", $EOInumber, $skill);
+                    mysqli_stmt_execute($stmtSkill);
+                    mysqli_stmt_close($stmtSkill);
+                }
             }
-        }
-        
-        echo "<p>Submission successfully. Thank you for your expression of interest. Your EOInumber is $EOInumber.</p>";
-    } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+            
+            echo "<p>Submission successfully. Thank you for your expression of interest. Your EOInumber is $EOInumber.</p>";
+        } else {
+            throw new Exception("Error: "  . "<br>" . "Something went wrong");
+        }   
+    } catch (Exception $e) {
+        echo "An error occured ". $e->getMessage() . "<br>";
     }
     mysqli_stmt_close($stmt);
     mysqli_close($conn);

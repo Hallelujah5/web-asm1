@@ -50,6 +50,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errMsg .= "<p>Invalid email format</p>";
         }
 
+        if ($dob == "" ) {
+            $errMsg .= "<p>Please enter a valid date of birth</p>";
+        }
+
+        if ($jobPref == "") {
+            $errMsg .= "<p>Please select your job preference</p>";
+        }
+
         if ($phone == "") {
             $errMsg .= "<p>Please enter your phone number</p>";
         } else if (!preg_match("/^[0-9]{8,12}$/", $phone)) {
