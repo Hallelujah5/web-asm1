@@ -22,12 +22,6 @@
             include_once("eoiControl.php");
             include_once("workControl.php");
 
-            session_start();
-            if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
-                header("Location: login.php");
-            }
-
-
             if(!isset($_GET["search"]) || $_GET["search"] == ""){
                 $eois = selectAllEois();
             }

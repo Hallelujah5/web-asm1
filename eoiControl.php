@@ -1,5 +1,6 @@
 <?php
 include_once("dbConnect.php");
+session_start();
 
 
 if (isset($_POST["action"]) && isset($_POST["id"])) {
@@ -53,6 +54,10 @@ if (isset($_POST["action"]) && isset($_POST["id"])) {
 
 function deleteEoi($id)
 {
+    if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
+        header("Location: login.php");
+    }
+
     global $conn;
 
     $stmt = mysqli_prepare($conn, "DELETE FROM eoi WHERE id = ?");
@@ -65,6 +70,10 @@ function deleteEoi($id)
 
 function selectAllEois()
 {
+    if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
+        header("Location: login.php");
+    }
+
     global $conn;
 
     $query = "SELECT * FROM eoi ORDER BY first_name";
@@ -79,6 +88,10 @@ function selectAllEois()
 
 function searchByIdNameEmail($searchString)
 {
+    if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
+        header("Location: login.php");
+    }
+
     global $conn;
 
     $searchString = strip_tags(trim($searchString));
@@ -101,6 +114,11 @@ function searchByIdNameEmail($searchString)
 
 function searchByNameEmail($searchString)
 {
+
+    if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
+        header("Location: login.php");
+    }
+
     global $conn;
 
     $searchString = strip_tags(trim($searchString));
@@ -123,6 +141,11 @@ function searchByNameEmail($searchString)
 
 function searchById($searchString)
 {
+
+    if (!isset($_SESSION["role"]) || $_SESSION["role"] == 0) {
+        header("Location: login.php");
+    }
+
     global $conn;
 
     $searchString = strip_tags(trim($searchString));
