@@ -113,12 +113,10 @@
         <div class="container-faqs">
           <ol>
             <li>
-              <i
-                ><div class="question">
+            <div class="question">
                   Are the job listings on your website
                   <span class="underline">updated</span> regularly?
-                </div></i
-              >
+                </div>
               <span class="answer">
                 Yes, we strive to keep our job listings updated with the latest
                 opportunities available in the market. Our team continuously
