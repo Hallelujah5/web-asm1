@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcfbeb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 20%;
+    padding: 12px 12px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+.backbutton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+    width: 40px; 
+    height: 40px;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/93/93634.png); 
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+.backbutton:hover {
+    opacity: 0.8;
+}
+.backbutton:visited {
+    text-decoration: none;
+ }
+@media screen and (max-width: 600px) {
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+}
+#logo {
+    position: relative;
+}

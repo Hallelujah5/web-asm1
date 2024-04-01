@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #fcfbeb;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+.backbutton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+    width: 40px; 
+    height: 40px;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/93/93634.png); 
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+.backbutton:hover {
+    opacity: 0.8;
+}
+.backbutton:visited {
+    text-decoration: none;
+}
+#logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 100%;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    select {
+        width: 100%;
+    }
+}
