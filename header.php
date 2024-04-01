@@ -17,21 +17,41 @@
                 <a href="about.php"><span>Companies</span></a>
               </li>
 
-              <?php 
-                if (!isset($_SESSION['role'])) {
-              ?>
-              <li>
-                <a href="login.php"><span>Login</span></a>
-              </li>
-              <?php 
-                } else {
-              ?>
-              <li>
-                <a href="logout.php"><span>Logout</span></a>
-              </li>
-              <?php
-                }
-              ?>
+            <?php 
+if (!isset($_SESSION['role'])) {
+    // When user isn't logged in
+    // will display only Login in navigation
+?>
+    <li>
+        <a href="login.php"><span>Login</span></a>
+    </li>
+<?php 
+} else {
+    // User is logged in
+    if ($_SESSION['role'] == 1) {
+        // role == 1 means it's a manager
+        //displays both Manager and Logout at the same time
+?>
+        <li>
+            <a href="logout.php"><span>Logout</span></a>
+        </li>
+        <li>
+            <a href="manager.php"><span>Manager</span></a>  
+        </li>
+       
+<?php
+    } else {
+        // User is not a manager
+        //display only logout
+?>
+        <li>
+            <a href="logout.php"><span>Logout</span></a>
+        </li>
+<?php
+    }
+}
+?>
+
             </ul>
           </div>
           <!-- Sub navigation bar  -->
