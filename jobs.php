@@ -29,7 +29,7 @@
     <div class="wrapper">
       <label for="" class="typing-demo">Looking for jobs ?
       </label> 
-      <a href="apply.html" class="button" id="APPLY" target="_blank"
+      <a href="apply.php" class="button" id="APPLY" target="_blank"
       >Apply now</a
     >
     </div>
