@@ -29,7 +29,7 @@
 
         <div class="wrapper" id="slogan">
           <div class="typing-demo">Find your true self.</div>
-          <a href="apply.html" class="button" id="APPLY" target="_blank"
+          <a href="apply.php" class="button" id="APPLY" target="_blank"
             >Apply now</a
           >
         </div>
