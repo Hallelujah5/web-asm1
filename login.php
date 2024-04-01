@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <?php include_once 'sessionConfig.php'; ?>
 
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,10 +19,10 @@
         </div>
       
         <div class="container">
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
-          <label for="password"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="password" required>
+            <label for="log_email"><b>Email</b></label>
+            <input type="text" name="log_email" id="log_email" placeholder="Enter Email" required>
+            <label for="log_password"><b>Password</b></label>
+            <input type="password" id="log_password" placeholder=" Enter Password" name="password" required>
       
           <button type="submit">Login</button>
 
@@ -34,8 +34,8 @@
         <div class="container" style="background-color:#f1f1f1">
           <span class="psw"><a href="#">Forgot password?</a></span>
         </div>
-        <a href="index.php" class="backbutton"></a>
-      </body>
+        <a href="index.php" class="backbutton">.</a>
+
       </form>
   </body>
 </html>
