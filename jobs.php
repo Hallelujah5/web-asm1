@@ -66,7 +66,7 @@
       <h1>In-depth Job Insights</h1>
 
       <div class="job-detail">
-        <h2 class="job-detail-h2">Economic Analyst</h2>
+        <h2 class="job-detail-h2">Economic Analyst (DEF34)</h2>
         <ul class="job-detail-ul">
           <li><strong>Industry:</strong> Finance & Economics</li>
           <li><strong>Role:</strong> Analyze economic scenarios and model economic forecasts.</li>
@@ -81,7 +81,7 @@
         </ul>
       </div>
       <div class="job-detail">
-        <h2 class="job-detail-h2">Software Engineer</h2>
+        <h2 class="job-detail-h2">Software Engineer (JKL78)</h2>
         <ul class="job-detail-ul">
           <li><strong>Industry:</strong> Technology & Software Development</li>
           <li><strong>Role:</strong> Design, develop, and maintain software applications.</li>
