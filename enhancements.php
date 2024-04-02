@@ -28,7 +28,7 @@
 
             <div class="wrapper" id="slogan">
                 <div class="typing-demo">Website Enhancements.</div>
-                <a href="apply.html" class="button" id="APPLY" target="_blank">Apply now</a>
+                <a href="apply.php" class="button" id="APPLY" target="_blank">Apply now</a>
             </div>
         </div>
 
