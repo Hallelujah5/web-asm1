@@ -6,21 +6,21 @@ CREATE DATABASE IF NOT EXISTS company_php;
 -- FLUSH PRIVILEGES;
 -- drop user 'assigment2_inquiry'@'localhost';
 
--- drop table eoi_skills;
+drop table eoi_skills;
 
--- drop table skills;
+drop table skills;
 
--- drop table users;
+drop table users;
 
--- drop table eoi;
+drop table eoi;
 
--- drop table job_description;
+drop table job_description;
 
 -- Create table
 use company_php;
 
 CREATE TABLE IF NOT EXISTS job_description (
-    job_ref_number CHAR(5) PRIMARY KEY NOT NULL, job_title VARCHAR(20) NOT NULL, job_descript TEXT NULL
+    job_ref_number CHAR(5) PRIMARY KEY NOT NULL , job_title VARCHAR(20) NOT NULL, job_descript TEXT NULL
 );
 INSERT INTO
     job_description (
@@ -41,7 +41,16 @@ CREATE TABLE IF NOT exists users (
 );
 
 CREATE TABLE IF NOT exists eoi (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, job_reference_number CHAR(5) NOT NULL, first_name VARCHAR(20) NOT NULL, last_name VARCHAR(20) NOT NULL, date_of_birth DATE NOT NULL, gender BIT(1) DEFAULT NULL, street_address VARCHAR(40) NOT NULL, suburb_town VARCHAR(40) NOT NULL, state CHAR(3) NOT NULL, postcode INT(4) NOT NULL, email VARCHAR(255) NOT NULL UNIQUE, phone_number VARCHAR(12) NOT NULL, other_skills VARCHAR(2000) DEFAULT NULL, cv_id VARCHAR(255) DEFAULT NULL, status ENUM('New', 'Current', 'Final') DEFAULT 'New', FOREIGN KEY (job_reference_number) REFERENCES job_description (job_ref_number)
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, job_reference_number CHAR(5) NOT NULL, first_name VARCHAR(20) NOT NULL, 
+    last_name VARCHAR(20) NOT NULL, date_of_birth DATE NOT NULL, 
+    gender BIT(1) DEFAULT NULL,
+    street_address VARCHAR(40) NOT NULL, 
+    suburb_town VARCHAR(40) NOT NULL, state CHAR(3) NOT NULL,
+    postcode INT(4) NOT NULL, email VARCHAR(255) NOT NULL UNIQUE, 
+    phone_number VARCHAR(12) NOT NULL, other_skills VARCHAR(2000) DEFAULT NULL,
+    cv_id VARCHAR(255) DEFAULT NULL,
+    status ENUM('New', 'Current', 'Final') DEFAULT 'New', 
+    FOREIGN KEY (job_reference_number) REFERENCES job_description (job_ref_number) on delete cascade
 );
 
 CREATE TABLE IF NOT exists skills (
@@ -49,7 +58,10 @@ CREATE TABLE IF NOT exists skills (
 );
 
 CREATE TABLE IF NOT exists eoi_skills (
-    eoi_id INT NOT NULL, skill_id INT NOT NULL, FOREIGN KEY (eoi_id) REFERENCES eoi (id), FOREIGN KEY (skill_id) REFERENCES skills (id), PRIMARY KEY (eoi_id, skill_id)
+    eoi_id INT NOT NULL, skill_id INT NOT NULL, 
+    FOREIGN KEY (eoi_id) REFERENCES eoi (id) ON DELETE cascade, 
+    FOREIGN KEY (skill_id) REFERENCES skills (id) ON DELETE cascade, 
+    PRIMARY KEY (eoi_id, skill_id)
 );
 
 
