@@ -15,7 +15,7 @@ function sanitize_input($data)
 // also prevents them from directly accessing by the URL
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
+                    //If it exists, sanitize it, else, assign it to an empty string.
         $firstName = isset($_POST["Name"]) ? sanitize_input($_POST["Name"]) : "";
         $lastName = isset($_POST["Family"]) ? sanitize_input($_POST["Family"]) : "";
         $dob = isset($_POST["birthdate"]) ? sanitize_input($_POST["birthdate"]) : "";
@@ -31,6 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $skills = isset($_POST["skill"]) ? $_POST["skill"] : null;
         $cv =  isset($_FILES["cv"]) ? $_FILES["cv"] : null ;
 
+
+        //display any error messages if user hasn't met the requirement.
         $errMsg = "";
         if ($firstName == "") {
             $errMsg .= "<p>Please enter your first name</p>";
@@ -75,6 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         } else {
           insertEoi($jobPref, $firstName, $lastName, $dob, $gender, $strAddress, $suburb, $state, $postcode, $email, $phone, $otherSkills, $skills, $cv);
-        }
+        } //this function here is inside eoiControl.php
     }
 
